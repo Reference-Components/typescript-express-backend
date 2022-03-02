@@ -1,0 +1,7 @@
+{
+    "ext": "ts,js",
+    "watch": ["src", ".env"],
+    "events": {
+        "restart": "npm run lint"
+    }
+}
