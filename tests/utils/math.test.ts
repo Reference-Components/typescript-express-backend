@@ -1,4 +1,4 @@
-import { sum } from './math';
+import { sum } from 'utils/math';
 
 describe('sum', () => {
   test('adds 1 + 2 to equal 3', () => {

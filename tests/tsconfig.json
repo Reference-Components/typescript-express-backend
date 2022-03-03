@@ -1,0 +1,8 @@
+/*
+This files purpose is to silence VSCode errors on test files 
+(VSCode cannot resolve 'moduleDirectories' from 'jest.config.js').
+*/
+{
+    "extends": "../tsconfig.json",
+    "include": ["**/*.test.ts"]
+}

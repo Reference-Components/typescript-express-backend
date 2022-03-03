@@ -1,12 +1,12 @@
 import express from 'express';
 import helmet from 'helmet';
-import session from 'express-session';
+import session, { MemoryStore } from 'express-session';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { ENV, PUBLIC_DIR, PUBLIC_ROUTE } from './config/config';
 
 // Import controllers
-import exampleController from './controllers/exampleController';
+import userController from './controllers/userController';
 
 // Configure Express app
 const app = express();
@@ -16,7 +16,8 @@ const sessionConfigs = {
   saveUninitialized: false,
   secret: '4w3S0m3S3cR3t!?!?! Replace me!', // TODO: change!
   name: 'sessionId',
-  cookie: { secure: false }
+  cookie: { secure: false },
+  store: new MemoryStore() // TODO: use another store! Or another session middleware!
 };
 
 // Production environment specific configs
@@ -32,11 +33,12 @@ app.use(session(sessionConfigs));
 app.use(bodyParser.json());
 
 // Route controllers
-app.use('/api/example', exampleController)
+app.use('/api/users', userController)
 
 // Public route
 if (PUBLIC_DIR) {
   app.use(PUBLIC_ROUTE, express.static(PUBLIC_DIR))
+  console.log('Serving static resources from:', PUBLIC_DIR);
 }
 
 export default app;
