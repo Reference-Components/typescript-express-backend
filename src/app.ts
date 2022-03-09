@@ -14,8 +14,8 @@ const app = express();
 const sessionConfigs = {
   resave: true,
   saveUninitialized: false,
-  secret: '4w3S0m3S3cR3t!?!?! Replace me!', // TODO: change!
-  name: 'sessionId',
+  secret: 'Replace me!', // TODO: change!
+  name: 'sessionId', // TODO: change!
   cookie: { secure: false },
   store: new MemoryStore() // TODO: use another store! Or another session middleware!
 };

@@ -8,7 +8,6 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf dist",
-    "tsc": "tsc",
     "lint": "eslint ./src --fix",
     "prebuild": "npm-run-all clean",
     "build": "webpack",
