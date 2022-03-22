@@ -26,6 +26,9 @@ RUN useradd -u $USER_UID $USERNAME
 RUN chown -R $USER_UID /app
 USER $USERNAME
 
+# Expose port
+EXPOSE 8080
+
 # Start app
 CMD echo "Starting the app in container..." &&\
     echo "User: $(whoami)" &&\
