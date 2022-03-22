@@ -1,7 +1,8 @@
 FROM ubuntu:20.04
 
 # Update and install required packages
-RUN apt update
+RUN apt update -y
+RUN apt upgrade -y
 RUN apt install -y curl
 
 # Install Node.js for Ubuntu
