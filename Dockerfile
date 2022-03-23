@@ -20,15 +20,15 @@ ENV SERVER_PORT=8080
 ENV PUBLIC_DIR=/app/public
 ENV PUBLIC_ROUTE=/public
 
+# Expose port
+EXPOSE 8080
+
 # Add and switch to non-root user
 ARG USERNAME=typescript-express-backend
 ARG USER_UID=1000
 RUN useradd -u $USER_UID $USERNAME
 RUN chown -R $USER_UID /app
 USER $USERNAME
-
-# Expose port
-EXPOSE 8080
 
 # Start app
 CMD echo "Starting the app in container..." &&\
