@@ -33,6 +33,10 @@ app.use(session(sessionConfigs));
 app.use(bodyParser.json());
 
 // Route controllers
+app.get('/', (req, res) => {
+  // TODO: delete me!
+  res.send('Hello World!')
+})
 app.use('/api/users', userController)
 
 // Public route
